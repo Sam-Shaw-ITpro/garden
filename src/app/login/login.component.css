@@ -1,0 +1,16 @@
+.loginContainer{
+    width:75%;
+    height:75%;
+    background-color:wheat;
+    margin:auto;
+    border:.25em solid black;
+
+}
+form{
+    margin-left:42%;
+    margin-top:20%
+}
+input{
+    margin-top:.5em;
+    margin-bottom:.5em
+}

@@ -7,7 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsComponent } from './products/products.component';
-import { HttpClientModule } from '@angular/common/http'
+
+
+import{ ProductService } from './product.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { DeleteComponent } from './delete/delete.component'
 
 @NgModule({
   declarations: [
@@ -15,14 +19,15 @@ import { HttpClientModule } from '@angular/common/http'
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    ProductsComponent
+    ProductsComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ProductService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,23 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product';
 import { ProductService } from '../product.service';
+import { Product } from '../models/product';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+ selector: 'app-products',
+ templateUrl: './products.component.html',
+ styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[];
+ products = []
 
-  constructor(private productService: ProductService) { }
+ constructor(private productService: ProductService) { }
 
-  ngOnInit() {
-    this.getProducts();
-  }
-  getProducts(): void {
-    this.productService.getProducts()
-    .subscribe(products => this.products = products)
-  }
+ ngOnInit() {
+   this.findProducts ()
+ }
 
-}
+ findProducts(): void {
+   this.productService.getProducts().subscribe(ProductOutput => {
+    this.products = ProductOutput
+   })
+   delete(this.products)
+     if (localStorage.getItem('token')){
+       this.productService.delete(Product).subscribe(
+         id => this.findProducts()
+       )
+     }else {
+       alert('You need to login to delete')
+     }
+   }
+ }

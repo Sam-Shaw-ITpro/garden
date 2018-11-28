@@ -1,0 +1,15 @@
+table{
+    background-color:wheat;
+    margin:auto;
+    height:75%;
+    width:75%;
+    border:.25em solid black;
+}
+td{
+    width:50%;
+    margin:auto
+}
+textarea{
+    width:97%;
+    height:20em;
+}

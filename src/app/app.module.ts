@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsComponent } from './products/products.component';
 
+import{ ProductService } from './product.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +21,10 @@ import { ProductsComponent } from './products/products.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

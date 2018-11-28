@@ -1,21 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+ selector: 'app-products',
+ templateUrl: './products.component.html',
+ styleUrls: ['./products.component.css']
 })
-export class ProductsComponent {
-  public _products = {}
+export class ProductsComponent implements OnInit {
+ products = []
 
-  ngOnInit() {
-  }
+ constructor(private productService: ProductService) { }
 
-  @Input()
-  set product(product: any){
-    this._products = (product)
-  }
-  get product() : any {
-    return this._products
-  }
+ ngOnInit() {
+   this.findProducts ()
+ }
+
+ findProducts(): void {
+   this.productService.getProducts().subscribe(ProductOutput => {
+    this.products = ProductOutput
+   })
+ }
 }

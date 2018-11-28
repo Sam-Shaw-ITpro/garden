@@ -5,7 +5,11 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Product } from './models/product';
 //import { MessageService } from './message.service'
 
-
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'

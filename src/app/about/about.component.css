@@ -1,7 +1,7 @@
 table{
     background-color:wheat;
     margin:auto;
-    height:75%;
+    height:70%;
     width:75%;
     border:.25em solid black;
 }
@@ -10,6 +10,19 @@ td{
     margin:auto
 }
 textarea{
-    width:97%;
+    width:80%;
     height:20em;
+}
+.imageLink:hover{
+    cursor:pointer;
+}
+input{
+    margin-bottom:1em
+}
+form{
+    margin-left:5em;
+}
+#tylerImage{
+margin-left:1em;
+margin-top:1em
 }
